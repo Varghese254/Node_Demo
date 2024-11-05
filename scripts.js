@@ -1,4 +1,6 @@
-
+const interval=setInterval(()=>{
+    console.log("running");
+})
 
 setTimeout(()=>{
     console.log("hello");
