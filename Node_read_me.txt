@@ -15,3 +15,5 @@ npm install nodemon -d
 cd logon-example
 npm init -y
 
+npm install express express-session body-parser
+
