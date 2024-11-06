@@ -70,24 +70,49 @@
 
 
 
-const EventEmitter = require("events");
-const emitter = new EventEmitter();
+// const EventEmitter = require("events");
+// const emitter = new EventEmitter();
 
-emitter.on("request", (req) => {
-    console.log(`Received request for ${req.url}`);
-    if (req.url === "/error") {
-        emitter.emit("error", new Error("An error occurred"));
-    } else {
-        console.log(`Processing request for ${req.url}`);
-    }
+// emitter.on("request", (req) => {
+//     console.log(`Received request for ${req.url}`);
+//     if (req.url === "/error") {
+//         emitter.emit("error", new Error("An error occurred"));
+//     } else {
+//         console.log(`Processing request for ${req.url}`);
+//     }
+// });
+
+// emitter.on("error", (err) => {
+//     console.log(`Error occurred: ${err.message}`);
+// });
+
+// // Emit the 'request' event instead of 'message'
+// emitter.emit("request", { url: "/home" });
+// emitter.emit("request", { url: "/about" });
+// emitter.emit("request", { url: "/error" });
+
+
+
+
+
+
+const path=require("path");
+const fs=require("fs");
+fs.mkdir(path.join(__dirname,"/api2"),(err)=>{
+    if(err)console.log(err);
 });
 
-emitter.on("error", (err) => {
-    console.log(`Error occurred: ${err.message}`);
+fs.mkdir(path.join(__dirname,"/api2/api4"),{recursive:true},(err)=>{
+    if(err)console.log(err);
 });
 
-// Emit the 'request' event instead of 'message'
-emitter.emit("request", { url: "/home" });
-emitter.emit("request", { url: "/about" });
-emitter.emit("request", { url: "/error" });
+fs.rmdir(path.join(__dirname,"/api2/api4"),{recursive:true},(err)=>{
+    if(err) throw err;
+});
+fs.writeFile(path.join(__dirname,"/api2","sample.txt"),"User Name:Varghese",(err)=>{
+    if(err) throw err;
+});
+
+
+
 
