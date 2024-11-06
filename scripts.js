@@ -12,14 +12,30 @@
 
 // const path=require("path");
 // const fs=require("fs");
-// fs.mkdir(path.join(__dirname,"/api2"),(err)=>{
+// fs.mkdir(path.join(__dirname,"/api"),(err)=>{
 //     if(err)console.log(err);
 // });
 // console.log(fs);
 
 
+// const path=require("path");
+// const fs=require("fs");
+// fs.mkdir(path.join(__dirname,"/api2/api3"),{recursive:true},(err)=>{
+//     if(err)console.log(err);
+// });
+
+
+// const path=require("path");
+// const fs=require("fs");
+// fs.rmdir(path.join(__dirname,"/api2"),{recursive:true},(err)=>{
+//     if(err) throw err;
+// });
+// console.log(fs)
+
+
 const path=require("path");
 const fs=require("fs");
-fs.mkdir(path.join(__dirname,"/api2/api3"),{recursive:true},(err)=>{
-    if(err)console.log(err);
+fs.writeFile(path.join(__dirname,"/api","api.txt"),"User Name:Varghese",(err)=>{
+    if(err) throw err;
 });
+console.log(fs);
