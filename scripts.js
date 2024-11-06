@@ -10,9 +10,16 @@
 // const path3=require("path")
 // console.log(path3.dirname(__filename));
 
+// const path=require("path");
+// const fs=require("fs");
+// fs.mkdir(path.join(__dirname,"/api2"),(err)=>{
+//     if(err)console.log(err);
+// });
+// console.log(fs);
+
+
 const path=require("path");
 const fs=require("fs");
-fs.mkdir(path.join(__dirname,"/api2"),(err)=>{
+fs.mkdir(path.join(__dirname,"/api2/api3"),{recursive:true},(err)=>{
     if(err)console.log(err);
 });
-console.log(fs);
