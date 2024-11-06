@@ -33,9 +33,40 @@
 // console.log(fs)
 
 
-const path=require("path");
-const fs=require("fs");
-fs.writeFile(path.join(__dirname,"/api","api.txt"),"User Name:Varghese",(err)=>{
-    if(err) throw err;
+// const path=require("path");
+// const fs=require("fs");
+// fs.writeFile(path.join(__dirname,"/api","api.txt"),"User Name:Varghese",(err)=>{
+//     if(err) throw err;
+// });
+// console.log(fs);
+
+
+
+// const EventEmmiter=require("events");
+// const emitter=new EventEmmiter();
+// emitter.on("message",(data)=>{
+//     console.log(data);
+// });
+//    emitter.on("logout",(data)=>
+// {
+//     console.log(data);
+// });
+// emitter.emit("message","Hello");
+// emitter.emit("logout","user logged out");
+
+
+const EventEmmiter=require("events");
+const emitter=new EventEmmiter();
+const user="user1"
+emitter.on("message",(data)=>{
+    console.log(data);
 });
-console.log(fs);
+   emitter.on("logout",(data)=>
+{
+    console.log(data);
+});
+emitter.emit("message",`Hello",${user}`);
+emitter.emit("logout","user logged out");
+
+
+
